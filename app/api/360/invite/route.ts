@@ -11,7 +11,7 @@ export async function POST(req:Request){
     const participantName=String(body.participantName||"").trim();
     const participantEmail=String(body.participantEmail||"").trim();
     const selfAnswers=Array.isArray(body.selfAnswers)?body.selfAnswers.map(Number):[];
-    const reviewerEmails=Array.isArray(body.reviewerEmails)?Array.from(new Set(body.reviewerEmails.map((x:string)=>String(x||"").trim().toLowerCase()).filter(Boolean))):[];
+    const reviewerEmails: string[]=Array.isArray(body.reviewerEmails)?Array.from(new Set((body.reviewerEmails as unknown[]).map((x:unknown)=>String(x||"").trim().toLowerCase()).filter((x:string)=>Boolean(x)))):[];
     const invitationMessage=String(body.invitationMessage||"").trim();
     if(!inviterName||!participantName||!/^\S+@\S+\.\S+$/.test(participantEmail)||selfAnswers.length!==18||selfAnswers.some((n:number)=>!Number.isInteger(n)||n<1||n>5)||reviewerEmails.length<1||reviewerEmails.length>3) return NextResponse.json({error:"Please provide your name, participant name and email, a completed self-assessment, and 1–3 reviewer emails."},{status:400});
     if(reviewerEmails.some((e:string)=>!/^\S+@\S+\.\S+$/.test(e))) return NextResponse.json({error:"Please check the reviewer email addresses."},{status:400});

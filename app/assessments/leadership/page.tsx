@@ -16,7 +16,7 @@ if(done&&report)return <main><section className="pagehero"><div className="conta
 <label>Participant email<br/><input required type="email" value={participantEmail} onChange={e=>setParticipantEmail(e.target.value)} placeholder="participant@company.com"/></label>
 <div className="grid3"><label>Reviewer email 1<br/><input required type="email" value={reviewerEmails[0]} onChange={e=>setReviewerEmails(v=>[e.target.value,v[1],v[2]])} /></label><label>Reviewer email 2 (optional)<br/><input type="email" value={reviewerEmails[1]} onChange={e=>setReviewerEmails(v=>[v[0],e.target.value,v[2]])} /></label><label>Reviewer email 3 (optional)<br/><input type="email" value={reviewerEmails[2]} onChange={e=>setReviewerEmails(v=>[v[0],v[1],e.target.value])} /></label></div>
 <label>Invitation message — editable<br/><textarea rows={8} value={invitationMessage} onChange={e=>setInvitationMessage(e.target.value)} /></label>
-<p className="small-note">Use <code>{{INVITER_NAME}}</code> and <code>{{PARTICIPANT_NAME}}</code> as placeholders. Reviewers receive a unique link and complete the same 18 behavior-based questions.</p>
+<p className="small-note">Use <code>{"{{INVITER_NAME}}"}</code> and <code>{"{{PARTICIPANT_NAME}}"}</code> as placeholders. Reviewers receive a unique link and complete the same 18 behavior-based questions.</p>
 <button className="btn btn-primary" disabled={busy}>{busy?"Sending invitations…":"Send 360 invitations →"}</button>
 {inviteStatus&&<div className={inviteStatus.startsWith("360 review created")?"notice":"notice notice-error"}>{inviteStatus}</div>}
 </form>}
