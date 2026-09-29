@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const challenges = [
@@ -30,7 +31,7 @@ const homeCaseStudies = [
   { category: "Talent Acquisition", title: "Building an in-house talent engine for U.S. market entry", outcome: "120+ employees scaled organically in 12 months, with clinical and commercial capabilities built for the U.S. hub." },
   { category: "Leadership & Talent", title: "Developing high-potential talent into a stronger leadership bench", outcome: "Six participants graduated in 12 months, with succession plans translated into action and a stronger leadership echelon." },
   { category: "Culture & Alignment", title: "Creating shared ways of working across countries and cultures", outcome: "A 2-day workshop plus two follow-ups produced practical team norms and charters for cross-cultural collaboration." },
-  { category: "Total Rewards", title: "Building a U.S. total rewards architecture for a high-complexity pharma company", outcome: "A 7-component rewards system connected job architecture, pay, career paths, LTI, benefits, performance and recognition—with U.S. benchmarks and pay-equity reviews." },
+  { category: "Total Rewards", title: "Building a total rewards architecture for a high-complexity U.S. expansion", outcome: "A 7-component rewards architecture aligned to specialized R&D talent needs, with U.S. market benchmarks and biannual pay-equity reviews." },
 ];
 
 export default function Home() {

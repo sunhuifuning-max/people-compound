@@ -53,9 +53,9 @@ const caseStudies = [
     category: "Total Rewards",
     title: "Building a U.S. total rewards architecture for a high-complexity pharmaceutical growth story",
     client: "Fast-growing pharmaceutical company entering the U.S. market",
-    challenge: "Create a U.S. compensation and rewards architecture without an existing global compensation structure, while meeting exceptionally high talent standards created by a complex pipeline.",
-    approach: "Built a comprehensive seven-component total rewards architecture covering job architecture, salary grades and bands, career paths, ESOP/LTI design using foreign-listed stock rather than a U.S.-listed equity program, benefits, performance and recognition. Built U.S. benchmarks using weighted data from three compensation surveys and established biannual pay-equity reviews.",
-    outcome: "A structured rewards system designed to support talent attraction and retention, with clearer career and pay architecture, market-informed U.S. benchmarks, and a recurring pay-equity review process.",
+    challenge: "Support a U.S. market entry for a fast-growing pharmaceutical company with exceptional R&D depth and a broad pipeline—without a structured global compensation architecture to anchor increasingly complex roles and capabilities.",
+    approach: "Designed a comprehensive seven-component U.S. total rewards architecture spanning job architecture, salary grades and bands, career paths, ESOP/LTI design using foreign-listed stock rather than a U.S.-listed equity program, benefits, performance and recognition. Built U.S. market benchmarks using weighted data from three compensation surveys and introduced biannual pay-equity reviews.",
+    outcome: "A coherent rewards architecture that gives the organization a stronger foundation for attracting and retaining deep, specialized talent as the U.S. organization grows—while bringing greater clarity to roles, career progression, pay positioning and ongoing equity review.",
     sourceNote: "Client outcome and project details supplied for this case study.",
   },
 
@@ -124,6 +124,10 @@ export default function InsightsPage() {
           <h2>Useful tools you can put to work.</h2>
           <p>Selected People Compound templates for building consistent HR practices. Request a template by email and tell us which one you need.</p>
         </div>
+        <div className="automation-feature">
+          <div className="automation-feature-image"><Image src="/images/automation.webp" alt="HR automation and process visibility" fill sizes="(max-width: 900px) 100vw, 520px" /></div>
+          <div className="automation-feature-copy"><div className="kicker">HR automation</div><h3>Don't let your template sit in a folder and never benefit organizational efficiency.</h3><p>Let's talk about turning the template into an interactive process—with automation, live collaboration and visibility for the stakeholders who need to act.</p><Link className="arrow" href="/contact">Talk about an HR automation opportunity →</Link></div>
+        </div>
         <div className="template-categories">
           {[
             { title: "Talent Acquisition", items: [
@@ -185,6 +189,16 @@ export default function InsightsPage() {
         <Link href={`/insights/${featured.slug}`} className="featured-insight">
           <div><span className="tag">{featured.category}</span><h3>{featured.title}</h3><p>{featured.description}</p><span className="insight-meta">{featured.read} · People Compound</span></div><span className="featured-arrow">→</span>
         </Link>
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
+        <div className="section-head"><div><div className="kicker">From Helen Sun</div><h2>More perspectives on building capability.</h2></div></div>
+        <div className="grid2">
+          <a className="featured-insight external-article-card" href="https://www.linkedin.com/pulse/from-chaos-cohesion-four-pillars-global-team-strategy-hui-helen-sun-cs2qe/" target="_blank" rel="noopener noreferrer"><div><span className="tag">Global Team Strategy</span><h3>From Chaos to Cohesion: Four Pillars of Global Team Strategy</h3><p>Practical perspective on creating alignment and cohesion across global teams.</p><span className="insight-meta">LinkedIn · Read article ↗</span></div><span className="featured-arrow">↗</span></a>
+          <a className="featured-insight external-article-card" href="https://www.linkedin.com/pulse/from-capability-credibility-four-pillars-managing-perception-sun-keojf/" target="_blank" rel="noopener noreferrer"><div><span className="tag">Leadership & Perception</span><h3>From Capability to Credibility: Four Pillars of Managing Perception</h3><p>Practical perspective on translating capability into credibility and leadership impact.</p><span className="insight-meta">LinkedIn · Read article ↗</span></div><span className="featured-arrow">↗</span></a>
+        </div>
       </div>
     </section>
 

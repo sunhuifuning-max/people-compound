@@ -1,10 +1,10 @@
-# People Compound — Production Build v16
+# People Compound — Production Build v19
 
 People Strategy for What's Next.
 
 ## Included
 - Premium People Compound website architecture
-- Six-section navigation: Solutions, Services, Leadership & Coaching, Assessments, Insights, About
+- Six-section navigation: Solutions, Services, Leadership, Assessments, Insights, About
 - Free Leadership Assessment and Organizational Health Check
 - Personalized assessment reports and 30/60/90-day action plans
 - Resend report delivery API architecture
@@ -63,7 +63,7 @@ Keep DNS at Cloudflare. In Resend, verify the sending domain and add every DNS r
 - Homepage now includes four compact selected case studies.
 - Insights now includes four full case studies, including the total rewards architecture case.
 - Insights now includes a practical HR template library with email-request links.
-- Navigation label updated from Leadership to Leadership & Coaching.
+- Navigation label finalized as Leadership.
 - Resend delivery routes now use a shared helper, clearer configuration handling, and server-side error logging.
 
 ## Resend email setup — required for live delivery
@@ -73,3 +73,49 @@ The website is wired for Resend. The sending domain can be verified in Resend/Cl
 - CONTACT_TO_EMAIL = helen.sun@peoplecompound.com
 
 After saving the variables, redeploy. Test both the contact form and an assessment report. If Resend rejects a request, the server logs now record the Resend response while the public site shows a safe, user-friendly message. Never commit the API key to GitHub.
+
+## 360 Leadership Review — production setup
+
+The Leadership Assessment now includes an optional 360 Review flow. It supports up to three invited reviewers, unique reviewer links, the same 18 behavior-based questions, and an integrated report comparing self-ratings with reviewer averages and gap analysis when all invited reviewers have completed the review.
+
+Because reviewer responses must persist across separate devices, production requires a small Supabase database. Add these Vercel environment variables:
+
+- `SUPABASE_URL`
+- `SUPABASE_SECRET_KEY`
+- `NEXT_PUBLIC_SITE_URL=https://www.peoplecompound.com`
+
+Create these tables in Supabase SQL Editor:
+
+```sql
+create extension if not exists pgcrypto;
+
+create table if not exists public.pc_360_sessions (
+  id uuid primary key default gen_random_uuid(),
+  inviter_name text not null,
+  participant_name text not null,
+  participant_email text not null,
+  self_answers jsonb not null,
+  invitation_message text not null,
+  created_at timestamptz not null default now()
+);
+
+create table if not exists public.pc_360_reviewers (
+  id uuid primary key default gen_random_uuid(),
+  session_id uuid not null references public.pc_360_sessions(id) on delete cascade,
+  reviewer_name text,
+  reviewer_email text not null,
+  token text unique not null,
+  answers jsonb,
+  completed_at timestamptz,
+  created_at timestamptz not null default now()
+);
+
+create index if not exists pc_360_reviewers_session_idx on public.pc_360_reviewers(session_id);
+create index if not exists pc_360_reviewers_token_idx on public.pc_360_reviewers(token);
+
+-- These tables are server-only. Secret-key backend calls bypass RLS; public browser access does not.
+alter table public.pc_360_sessions enable row level security;
+alter table public.pc_360_reviewers enable row level security;
+```
+
+The Supabase Secret key (`sb_secret_...`) is server-side only. Never commit it to GitHub, put it in a `NEXT_PUBLIC_` variable, or expose it to the browser. Supabase is deprecating the legacy `service_role` key in favor of Secret keys by the end of 2026.
