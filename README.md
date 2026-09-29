@@ -48,3 +48,11 @@ Keep DNS at Cloudflare. In Resend, verify the sending domain and add every DNS r
 5. Confirm the apex domain redirects/canonicalizes consistently to https://www.peoplecompound.com.
 6. Confirm Resend shows peoplecompound.com as verified before testing email.
 7. Deploy and test: contact form, assessment report email, Calendly link, GA4, sitemap, robots.txt, mobile navigation, and all primary routes.
+
+## v15 updates
+- Solutions page now presents **By Growth Stage** before **By Challenge**.
+- Added three selected case studies to the Insights page:
+  1. In-house TA capability building for a multinational pharmaceutical company entering the U.S. market.
+  2. High-potential talent development and succession.
+  3. Culture and value alignment for cross-country, cross-cultural collaboration during U.S. market entry.
+- Case study language is based on the provided TA capability-building and high-potential program source materials plus client outcome details supplied for this build.

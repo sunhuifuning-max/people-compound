@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const featured = {
@@ -17,7 +18,40 @@ const insights = [
   { slug: "leadership-capability-compounds", category: "Leadership Development", title: "Leadership Capability Compounds", description: "Why leadership development works best as an ongoing cycle of awareness, practice, feedback, reflection and application.", read: "7 min read" },
 ];
 
-const categories = ["All insights", "People Strategy", "Talent Acquisition", "Leadership", "Culture", "HR Infrastructure", "Leadership Development"];
+const caseStudies = [
+  {
+    number: "01",
+    category: "Talent Acquisition & Capability Building",
+    title: "Building an in-house talent engine for a U.S. market entry",
+    client: "Multinational pharmaceutical company entering the U.S. market",
+    challenge: "Build clinical and commercial capability in the U.S. organically while creating a repeatable recruiting function that could scale with the business.",
+    approach: "Built the recruiting operating model from the ground up: workforce planning, requisition governance, structured hiring kickoffs, sourcing strategy, structured interviews, role-specific scorecards, recruiting SLAs, talent intelligence, employer branding, TA capability development and commercialization-aligned workforce planning.",
+    outcome: "Grew the organization to 120+ employees organically within 12 months, while building the clinical and commercial capabilities needed for the U.S. hub.",
+    sourceNote: "The TA work included a standardized operating model, recruiting SOP and governance, structured interview framework, recruiting dashboard, TA competency framework and workforce planning roadmap.",
+  },
+  {
+    number: "02",
+    category: "Leadership & Talent Development",
+    title: "Turning high-potential talent into a stronger leadership bench",
+    client: "High-growth biopharma organization",
+    challenge: "Create a structured high-potential program that develops future leaders while connecting development to succession planning and organizational needs.",
+    approach: "Designed a 12-month development journey combining assessment, individualized development plans, coaching and mentoring, stretch assignments, leadership learning, feedback and progress measurement. The model connected talent assessment with succession and workforce planning rather than treating development as a standalone program.",
+    outcome: "Six high-potential participants graduated the program. Succession plans were translated into action plans, leadership capability was strengthened, and the organization moved forward with a stronger talent bench.",
+    sourceNote: "The program framework included defined potential, assessment, customized development plans, 360 feedback, coaching/mentoring, stretch assignments and post-program succession and career actions.",
+  },
+  {
+    number: "03",
+    category: "Culture & Organizational Alignment",
+    title: "Creating shared ways of working across countries and cultures",
+    client: "Organization entering the U.S. market",
+    challenge: "Build stronger cross-country, cross-cultural collaboration as a new U.S. organization worked with its global counterparts.",
+    approach: "Facilitated a two-day culture and values alignment workshop followed by two structured follow-up sessions. The work translated values and collaboration challenges into practical team norms, working agreements and team charters.",
+    outcome: "Teams left with shared norms and charters that clarified how they would collaborate, communicate, make decisions and work across cultures—creating a stronger foundation for the U.S. market entry.",
+    sourceNote: "Designed to move culture from stated values into practical behaviors and repeatable ways of working.",
+  },
+];
+
+const categories = ["All insights", "Case Studies", "People Strategy", "Talent Acquisition", "Leadership", "Culture", "HR Infrastructure", "Leadership Development"];
 
 export default function InsightsPage() {
   return <main>
@@ -35,6 +69,37 @@ export default function InsightsPage() {
             <div className="insight-stack"><span>Business strategy</span><b>→</b><span>People capability</span><b>→</b><span>Organizational performance</span></div>
             <p>Strong organizations don't rely on isolated HR programs. They build connected capabilities that reinforce one another over time.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="section page-image-section" aria-label="People Compound insights">
+      <div className="container">
+        <div className="page-image-frame">
+          <Image src="/images/insights.webp" alt="Ideas, strategy, and organizational insight" fill sizes="(max-width: 900px) 100vw, 1180px" />
+        </div>
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
+        <div className="section-intro narrow">
+          <div className="kicker">Selected case studies</div>
+          <h2>What people strategy looks like in practice.</h2>
+          <p>Examples of building talent capability, developing leadership pipelines and creating the organizational alignment required for growth.</p>
+        </div>
+        <div className="case-study-grid">
+          {caseStudies.map((x) => (
+            <article className="case-study-card" key={x.number}>
+              <div className="case-study-top"><span>{x.number}</span><span className="tag">{x.category}</span></div>
+              <h3>{x.title}</h3>
+              <div className="case-study-client"><strong>Client</strong><span>{x.client}</span></div>
+              <div className="case-study-block"><strong>Challenge</strong><p>{x.challenge}</p></div>
+              <div className="case-study-block"><strong>What we did</strong><p>{x.approach}</p></div>
+              <div className="case-study-outcome"><span>Outcome</span><p>{x.outcome}</p></div>
+              <div className="case-study-source">{x.sourceNote}</div>
+            </article>
+          ))}
         </div>
       </div>
     </section>

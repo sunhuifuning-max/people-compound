@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const organization = [
@@ -73,6 +74,14 @@ export default function ServicesPage() {
           <div className="actions">
             <Link className="btn btn-primary" href="/contact">Book a Conversation →</Link>
             <Link className="text-link" href="/solutions">Start with your challenge →</Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="section page-image-section" aria-label="People Compound services">
+        <div className="container">
+          <div className="page-image-frame">
+            <Image src="/images/service.webp" alt="A people leader working with a client" fill sizes="(max-width: 900px) 100vw, 1180px" />
           </div>
         </div>
       </section>

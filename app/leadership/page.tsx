@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const capabilities = [
@@ -53,6 +54,14 @@ export default function Page() {
               <div className="flywheel-node fn4">Reflection</div>
             </div>
             <p>Each cycle creates the awareness needed for the next one.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section page-image-section" aria-label="People Compound leadership development">
+        <div className="container">
+          <div className="page-image-frame page-image-leadership">
+            <Image src="/images/leadership.webp" alt="Leaders collaborating and celebrating progress together" fill sizes="(max-width: 900px) 100vw, 1180px" />
           </div>
         </div>
       </section>

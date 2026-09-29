@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const challenges = [
@@ -70,8 +71,8 @@ export default function SolutionsPage() {
             <h1>People strategy for the moment your business is in.</h1>
             <p className="lead">You don’t need more HR activity. You need the people capability to solve what the business is facing now—and prepare for what comes next.</p>
             <div className="actions">
-              <a className="btn btn-primary" href="#challenges">Find your challenge <span>→</span></a>
-              <a className="text-link" href="#growth-stage">Explore by growth stage <span>↓</span></a>
+              <a className="btn btn-primary" href="#growth-stage">Explore by growth stage <span>→</span></a>
+              <a className="text-link" href="#challenges">Explore by challenge <span>↓</span></a>
             </div>
           </div>
           <div className="solutions-map" aria-label="People Compound solution journey">
@@ -84,6 +85,36 @@ export default function SolutionsPage() {
           </div>
         </div>
       </section>
+
+      <section className="section page-image-section" aria-label="People Compound solutions">
+        <div className="container">
+          <div className="page-image-frame">
+            <Image src="/images/solution.webp" alt="People strategy and organizational planning in action" fill sizes="(max-width: 900px) 100vw, 1180px" />
+          </div>
+        </div>
+      </section>
+
+      <section className="section section-warm" id="growth-stage">
+        <div className="container">
+          <div className="section-intro narrow">
+            <div className="kicker">By growth stage</div>
+            <h2>Build what your next stage requires.</h2>
+            <p>The people systems that work at 20 people are different from those needed at 200. The goal is not to overbuild—it’s to build what the next stage requires.</p>
+          </div>
+          <div className="stage-solution-grid">
+            {stages.map((x, i) => (
+              <article className={`stage-solution-card ${i === 4 ? "stage-feature" : ""}`} key={x[0]}>
+                <div className="stage-number">0{i + 1}</div>
+                <div className="tag">{x[1]}</div>
+                <h3>{x[0]}</h3>
+                <p>{x[2]}</p>
+                <div className="solution-outcome"><span>Outcome</span><strong>{x[3]}</strong></div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       <section className="section" id="challenges">
         <div className="container">
@@ -104,27 +135,6 @@ export default function SolutionsPage() {
                 </div>
                 <div className="solution-outcome"><span>Outcome</span><strong>{x.outcome}</strong></div>
                 <Link className="arrow" href="/contact">Talk about this challenge →</Link>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="section section-warm" id="growth-stage">
-        <div className="container">
-          <div className="section-intro narrow">
-            <div className="kicker">By growth stage</div>
-            <h2>Build what your next stage requires.</h2>
-            <p>The people systems that work at 20 people are different from those needed at 200. The goal is not to overbuild—it’s to build what the next stage requires.</p>
-          </div>
-          <div className="stage-solution-grid">
-            {stages.map((x, i) => (
-              <article className={`stage-solution-card ${i === 4 ? "stage-feature" : ""}`} key={x[0]}>
-                <div className="stage-number">0{i + 1}</div>
-                <div className="tag">{x[1]}</div>
-                <h3>{x[0]}</h3>
-                <p>{x[2]}</p>
-                <div className="solution-outcome"><span>Outcome</span><strong>{x[3]}</strong></div>
               </article>
             ))}
           </div>

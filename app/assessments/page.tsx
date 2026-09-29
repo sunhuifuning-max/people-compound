@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const assessments = [
@@ -29,6 +30,14 @@ export default function Page(){
         <h1>Know where you are before deciding where to go.</h1>
         <p className="lead">Free, practical assessments designed to turn people questions into clear development priorities.</p>
         <div className="assessment-hub-meta">Both assessments use a 1–5 scale, show the structure before you begin, and give you an initial result immediately.</div>
+      </div>
+    </section>
+
+    <section className="section page-image-section" aria-label="People Compound assessments">
+      <div className="container">
+        <div className="page-image-frame">
+          <Image src="/images/assessment.webp" alt="People assessment and talent decision-making concept" fill sizes="(max-width: 900px) 100vw, 1180px" />
+        </div>
       </div>
     </section>
 
