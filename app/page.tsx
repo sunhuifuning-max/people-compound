@@ -26,6 +26,13 @@ const capabilities = [
   ["06", "Organizational & Leadership Effectiveness", "Strengthen organization design, decision rights, leadership capability and the systems that turn strategy into execution."],
 ];
 
+const homeCaseStudies = [
+  { category: "Talent Acquisition", title: "Building an in-house talent engine for U.S. market entry", outcome: "120+ employees scaled organically in 12 months, with clinical and commercial capabilities built for the U.S. hub." },
+  { category: "Leadership & Talent", title: "Developing high-potential talent into a stronger leadership bench", outcome: "Six participants graduated in 12 months, with succession plans translated into action and a stronger leadership echelon." },
+  { category: "Culture & Alignment", title: "Creating shared ways of working across countries and cultures", outcome: "A 2-day workshop plus two follow-ups produced practical team norms and charters for cross-cultural collaboration." },
+  { category: "Total Rewards", title: "Building a U.S. total rewards architecture for a high-complexity pharma company", outcome: "A 7-component rewards system connected job architecture, pay, career paths, LTI, benefits, performance and recognition—with U.S. benchmarks and pay-equity reviews." },
+];
+
 export default function Home() {
   return <main>
     <section className="hero hero-home">
@@ -62,7 +69,7 @@ export default function Home() {
       <div><strong>120+</strong><span>employees scaled in one U.S. growth story</span></div>
       <div><strong>40+</strong><span>senior leaders recruited</span></div>
       <div><strong>$2M</strong><span>recruiting cost savings through in-house capability</span></div>
-      <div><strong>SPHR</strong><span>senior HR credential</span></div>
+      <div><strong>Built</strong><span>HR infrastructure from scratch multiple times</span></div><div><strong>SPHR</strong><span>senior HR credential</span></div>
     </div></section>
 
     <section className="section section-warm">
@@ -83,6 +90,13 @@ export default function Home() {
       <div className="container">
         <div className="section-intro narrow"><div className="kicker">People capability</div><h2>Build the system behind the strategy.</h2><p>From the foundation to leadership effectiveness, we connect the pieces so your people function becomes an organizational advantage—not a collection of disconnected programs.</p></div>
         <div className="capability-list">{capabilities.map(([num, title, body]) => <Link className="capability-row" href="/services" key={num}><span className="cap-num">{num}</span><span><strong>{title}</strong><em>{body}</em></span><span className="cap-arrow">↗</span></Link>)}</div>
+      </div>
+    </section>
+
+    <section className="section case-study-home-section">
+      <div className="container">
+        <div className="section-head"><div><div className="kicker">Selected case studies</div><h2>Capability built for real business moments.</h2></div><Link className="arrow" href="/insights">View all case studies →</Link></div>
+        <div className="home-case-grid">{homeCaseStudies.map((x, i) => <article className="home-case-card" key={x.title}><span className="home-case-number">0{i+1}</span><span className="tag">{x.category}</span><h3>{x.title}</h3><div className="home-case-outcome"><span>Outcome</span><p>{x.outcome}</p></div></article>)}</div>
       </div>
     </section>
 

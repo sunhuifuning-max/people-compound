@@ -1,10 +1,10 @@
-# People Compound — Production Build v9
+# People Compound — Production Build v16
 
 People Strategy for What's Next.
 
 ## Included
 - Premium People Compound website architecture
-- Six-section navigation: Solutions, Services, Leadership, Assessments, Insights, About
+- Six-section navigation: Solutions, Services, Leadership & Coaching, Assessments, Insights, About
 - Free Leadership Assessment and Organizational Health Check
 - Personalized assessment reports and 30/60/90-day action plans
 - Resend report delivery API architecture
@@ -56,3 +56,20 @@ Keep DNS at Cloudflare. In Resend, verify the sending domain and add every DNS r
   2. High-potential talent development and succession.
   3. Culture and value alignment for cross-country, cross-cultural collaboration during U.S. market entry.
 - Case study language is based on the provided TA capability-building and high-potential program source materials plus client outcome details supplied for this build.
+
+
+## v16 updates
+- Homepage proof strip now includes: 15+ years, 120+ employees scaled, 40+ senior leaders recruited, $2M recruiting savings, HR infrastructure built from scratch multiple times, and SPHR.
+- Homepage now includes four compact selected case studies.
+- Insights now includes four full case studies, including the total rewards architecture case.
+- Insights now includes a practical HR template library with email-request links.
+- Navigation label updated from Leadership to Leadership & Coaching.
+- Resend delivery routes now use a shared helper, clearer configuration handling, and server-side error logging.
+
+## Resend email setup — required for live delivery
+The website is wired for Resend. The sending domain can be verified in Resend/Cloudflare, but Vercel still needs the Resend API key. In Vercel → Project → Settings → Environment Variables, add for Production:
+- RESEND_API_KEY = your Resend API key
+- REPORT_FROM_EMAIL = People Compound <helen.sun@peoplecompound.com>
+- CONTACT_TO_EMAIL = helen.sun@peoplecompound.com
+
+After saving the variables, redeploy. Test both the contact form and an assessment report. If Resend rejects a request, the server logs now record the Resend response while the public site shows a safe, user-friendly message. Never commit the API key to GitHub.

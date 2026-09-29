@@ -48,7 +48,17 @@ const caseStudies = [
     approach: "Facilitated a two-day culture and values alignment workshop followed by two structured follow-up sessions. The work translated values and collaboration challenges into practical team norms, working agreements and team charters.",
     outcome: "Teams left with shared norms and charters that clarified how they would collaborate, communicate, make decisions and work across cultures—creating a stronger foundation for the U.S. market entry.",
     sourceNote: "Designed to move culture from stated values into practical behaviors and repeatable ways of working.",
+  },  {
+    number: "04",
+    category: "Total Rewards",
+    title: "Building a U.S. total rewards architecture for a high-complexity pharmaceutical growth story",
+    client: "Fast-growing pharmaceutical company entering the U.S. market",
+    challenge: "Create a U.S. compensation and rewards architecture without an existing global compensation structure, while meeting exceptionally high talent standards created by a complex pipeline.",
+    approach: "Built a comprehensive seven-component total rewards architecture covering job architecture, salary grades and bands, career paths, ESOP/LTI design using foreign-listed stock rather than a U.S.-listed equity program, benefits, performance and recognition. Built U.S. benchmarks using weighted data from three compensation surveys and established biannual pay-equity reviews.",
+    outcome: "A structured rewards system designed to support talent attraction and retention, with clearer career and pay architecture, market-informed U.S. benchmarks, and a recurring pay-equity review process.",
+    sourceNote: "Client outcome and project details supplied for this case study.",
   },
+
 ];
 
 const categories = ["All insights", "Case Studies", "People Strategy", "Talent Acquisition", "Leadership", "Culture", "HR Infrastructure", "Leadership Development"];
@@ -86,7 +96,7 @@ export default function InsightsPage() {
         <div className="section-intro narrow">
           <div className="kicker">Selected case studies</div>
           <h2>What people strategy looks like in practice.</h2>
-          <p>Examples of building talent capability, developing leadership pipelines and creating the organizational alignment required for growth.</p>
+          <p>Examples of building talent capability, developing leadership pipelines, creating organizational alignment, and designing rewards systems for growth.</p>
         </div>
         <div className="case-study-grid">
           {caseStudies.map((x) => (
@@ -101,6 +111,31 @@ export default function InsightsPage() {
             </article>
           ))}
         </div>
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container">
+        <div className="section-intro narrow">
+          <div className="kicker">Practical HR templates</div>
+          <h2>Useful tools you can put to work.</h2>
+          <p>Selected People Compound templates for building consistent HR practices. Request a template by email and tell us which one you need.</p>
+        </div>
+        <div className="template-grid">
+          {[
+            ["HR SOP Template", "A practical structure for documenting repeatable HR processes, ownership, SLAs and controls."],
+            ["Recruiting Kickoff Questions", "A structured intake guide covering business need, success profile, scope, sourcing and interview process."],
+            ["Interview Rubric Template", "A consistent scorecard structure for competency-based, technical and situational assessment."],
+            ["Onboarding 30-60-90 Day Template", "A simple framework for role clarity, priorities, relationships, capability building and milestones."],
+            ["Offboarding Checklist", "A structured checklist for manager, HR, access, payroll, benefits, equipment, knowledge transfer and communications."],
+            ["Exit Interview Template", "Questions to understand employee experience, leadership, culture, development, rewards and reasons for leaving."],
+            ["Employee Satisfaction Survey", "A practical survey structure covering engagement, leadership, culture, communication, development and employee experience."],
+            ["Discipline Procedure Template", "A consistent framework for documenting expectations, investigation, decision-making and follow-through."],
+            ["Travel & Expense Policy Template", "A practical policy structure covering eligible expenses, approvals, documentation and reimbursement."],
+            ["Investigation Procedure Template", "A structured approach to intake, planning, interviews, evidence, findings, documentation and follow-up."],
+          ].map(([title, desc]) => <article className="template-card" key={title}><span className="tag">Template</span><h3>{title}</h3><p>{desc}</p><a href={`mailto:helen.sun@peoplecompound.com?subject=${encodeURIComponent(`People Compound template request — ${title}`)}`}>Request this template →</a></article>)}
+        </div>
+        <div className="template-note"><strong>Request by email:</strong> helen.sun@peoplecompound.com — include the template name and a little context about your organization so we can point you to the most useful version.</div>
       </div>
     </section>
 

@@ -5,7 +5,7 @@ import Link from "next/link";
 const nav = [
   ["/solutions", "Solutions"],
   ["/services", "Services"],
-  ["/leadership", "Leadership"],
+  ["/leadership", "Leadership & Coaching"],
   ["/assessments", "Assessments"],
   ["/insights", "Insights"],
   ["/about", "About"],
