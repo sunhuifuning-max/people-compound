@@ -54,7 +54,7 @@ const caseStudies = [
     title: "Building a U.S. total rewards architecture for a high-complexity pharmaceutical growth story",
     client: "Fast-growing pharmaceutical company entering the U.S. market",
     challenge: "Support a U.S. market entry for a fast-growing pharmaceutical company with exceptional R&D depth and a broad pipeline—without a structured global compensation architecture to anchor increasingly complex roles and capabilities.",
-    approach: "Designed a comprehensive seven-component U.S. total rewards architecture spanning job architecture, salary grades and bands, career paths, ESOP/LTI design using foreign-listed stock rather than a U.S.-listed equity program, benefits, performance and recognition. Built U.S. market benchmarks using weighted data from three compensation surveys and introduced biannual pay-equity reviews.",
+    approach: "Used the Mercer IPE methodology to conduct job evaluation and analysis across five factors and 12 dimensions, establishing a clear job architecture and salary band structure. Built a comprehensive seven-component U.S. total rewards architecture spanning job architecture, salary grades and bands, career paths, ESOP/LTI design using foreign-listed stock rather than a U.S.-listed equity program, benefits, performance and recognition. Built U.S. market benchmarks using weighted data from three compensation surveys and introduced biannual pay-equity reviews.",
     outcome: "A coherent rewards architecture that gives the organization a stronger foundation for attracting and retaining deep, specialized talent as the U.S. organization grows—while bringing greater clarity to roles, career progression, pay positioning and ongoing equity review.",
     sourceNote: "Client outcome and project details supplied for this case study.",
   },
@@ -140,9 +140,13 @@ export default function InsightsPage() {
               ["Onboarding 30-60-90 Day Template", "A simple framework for role clarity, priorities, relationships, capability building and milestones."],
               ["Organization Announcement Template", "A clear communication structure for welcoming new employees and explaining role, team and business context."]
             ]},
-            { title: "Performance Management", items: [
+            { title: "Talent Management", items: [
               ["Annual Performance Review SOP", "A repeatable process covering timing, manager preparation, calibration, employee conversations and documentation."],
-              ["Performance Improvement Plan (PIP) Template", "A structured framework for expectations, measurable improvement goals, support, checkpoints and documentation."]
+              ["Performance Improvement Plan (PIP) Template", "A structured framework for expectations, measurable improvement goals, support, checkpoints and documentation."],
+              ["Talent Review Template", "A structured framework for reviewing talent, performance, potential, critical capabilities and development priorities across the organization."],
+              ["Succession Plan Template", "A practical framework for identifying critical roles, successors, readiness, risk and development actions."],
+              ["Talent Profile Template", "A concise profile of capabilities, experience, performance, potential, career interests and development needs for key talent."],
+              ["Individual Development Plan", "A practical plan connecting career aspirations, capability gaps, development actions, support and measurable milestones."]
             ]},
             { title: "Employee Relations", items: [
               ["Grievance Handling SOP", "A consistent approach to receiving, assessing, documenting and resolving employee grievances."],

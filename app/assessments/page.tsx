@@ -53,6 +53,19 @@ export default function Page(){
             <Link className="btn btn-primary" href={a.href}>{a.cta}</Link>
           </article>)}
         </div>
+        <div className="assessment-360-preview">
+          <div>
+            <div className="kicker">Leadership Assessment · Optional 360 Review</div>
+            <h2>Want a fuller view? Add a 360 review.</h2>
+            <p>After completing the Leadership Assessment, you can invite up to <strong>3 reviewers</strong>—such as a manager, peer or direct report—to answer the same 18 behavior-based questions.</p>
+          </div>
+          <div className="assessment-360-steps">
+            <div><strong>01</strong><span>Complete your self-assessment</span></div>
+            <div><strong>02</strong><span>Invite up to 3 reviewers</span></div>
+            <div><strong>03</strong><span>Reviewers complete the same 18 questions</span></div>
+            <div><strong>04</strong><span>Receive an integrated report with gap analysis</span></div>
+          </div>
+        </div>
       </div>
     </section>
 

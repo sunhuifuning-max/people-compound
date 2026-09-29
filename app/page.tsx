@@ -73,6 +73,19 @@ export default function Home() {
       <div><strong>Built</strong><span>HR infrastructure from scratch multiple times</span></div><div><strong>SPHR</strong><span>senior HR credential</span></div>
     </div></section>
 
+    <section className="section home-collaboration-section">
+      <div className="container home-collaboration-grid">
+        <div className="home-collaboration-image"><Image src="/images/homepage-collaboration.webp" alt="Leaders collaborating and building stronger organizations together" fill sizes="(max-width: 900px) 100vw, 620px" /></div>
+        <div className="home-collaboration-copy">
+          <div className="kicker">People, strategy & execution</div>
+          <h2>When the business changes, the organization has to move with it.</h2>
+          <p className="lead">The strongest people strategies connect business direction with the organization, talent and leadership capability required to execute it.</p>
+          <p>People Compound helps leaders build that connection—whether the moment calls for a stronger foundation, scalable systems, leadership capability, organizational redesign or transformation.</p>
+          <Link className="arrow" href="/solutions">Explore how we help →</Link>
+        </div>
+      </div>
+    </section>
+
     <section className="section section-warm">
       <div className="container">
         <div className="section-intro narrow"><div className="kicker">Start with the challenge</div><h2>You don't need more HR activity. You need the right capability.</h2><p>People Compound helps leaders solve the people and organizational problems that appear as the business changes.</p></div>
