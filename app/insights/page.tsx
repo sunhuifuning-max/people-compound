@@ -116,24 +116,57 @@ export default function InsightsPage() {
 
     <section className="section">
       <div className="container">
-        <div className="section-intro narrow">
+        <div className="template-image-frame">
+          <Image src="/images/templates.webp" alt="HR standard operating procedures and practical HR templates" fill sizes="(max-width: 900px) 100vw, 1180px" />
+        </div>
+        <div className="section-intro narrow" style={{marginTop: 38}}>
           <div className="kicker">Practical HR templates</div>
           <h2>Useful tools you can put to work.</h2>
           <p>Selected People Compound templates for building consistent HR practices. Request a template by email and tell us which one you need.</p>
         </div>
-        <div className="template-grid">
+        <div className="template-categories">
           {[
-            ["HR SOP Template", "A practical structure for documenting repeatable HR processes, ownership, SLAs and controls."],
-            ["Recruiting Kickoff Questions", "A structured intake guide covering business need, success profile, scope, sourcing and interview process."],
-            ["Interview Rubric Template", "A consistent scorecard structure for competency-based, technical and situational assessment."],
-            ["Onboarding 30-60-90 Day Template", "A simple framework for role clarity, priorities, relationships, capability building and milestones."],
-            ["Offboarding Checklist", "A structured checklist for manager, HR, access, payroll, benefits, equipment, knowledge transfer and communications."],
-            ["Exit Interview Template", "Questions to understand employee experience, leadership, culture, development, rewards and reasons for leaving."],
-            ["Employee Satisfaction Survey", "A practical survey structure covering engagement, leadership, culture, communication, development and employee experience."],
-            ["Discipline Procedure Template", "A consistent framework for documenting expectations, investigation, decision-making and follow-through."],
-            ["Travel & Expense Policy Template", "A practical policy structure covering eligible expenses, approvals, documentation and reimbursement."],
-            ["Investigation Procedure Template", "A structured approach to intake, planning, interviews, evidence, findings, documentation and follow-up."],
-          ].map(([title, desc]) => <article className="template-card" key={title}><span className="tag">Template</span><h3>{title}</h3><p>{desc}</p><a href={`mailto:helen.sun@peoplecompound.com?subject=${encodeURIComponent(`People Compound template request — ${title}`)}`}>Request this template →</a></article>)}
+            { title: "Talent Acquisition", items: [
+              ["Recruiting Kickoff Questions", "A structured intake guide covering business need, success profile, scope, sourcing and interview process."],
+              ["Job Description Template", "A practical structure for role purpose, responsibilities, qualifications, success measures and reporting relationships."],
+              ["Interview Rubric Template", "A consistent scorecard structure for competency-based, technical and situational assessment."]
+            ]},
+            { title: "Onboarding & Orientation", items: [
+              ["Pre-Onboarding & First Day Checklist", "A practical checklist for pre-start communications, access, equipment, introductions and first-day readiness."],
+              ["Onboarding 30-60-90 Day Template", "A simple framework for role clarity, priorities, relationships, capability building and milestones."],
+              ["Organization Announcement Template", "A clear communication structure for welcoming new employees and explaining role, team and business context."]
+            ]},
+            { title: "Performance Management", items: [
+              ["Annual Performance Review SOP", "A repeatable process covering timing, manager preparation, calibration, employee conversations and documentation."],
+              ["Performance Improvement Plan (PIP) Template", "A structured framework for expectations, measurable improvement goals, support, checkpoints and documentation."]
+            ]},
+            { title: "Employee Relations", items: [
+              ["Grievance Handling SOP", "A consistent approach to receiving, assessing, documenting and resolving employee grievances."],
+              ["Workplace Investigation Procedure", "A structured approach to intake, planning, interviews, evidence, findings, documentation and follow-up."],
+              ["Conflict Resolution Template", "A practical framework for preparing, facilitating and documenting constructive workplace conflict resolution."],
+              ["Discipline Procedure Template", "A consistent framework for documenting expectations, investigation, decision-making and follow-through."],
+              ["Offboarding Checklist", "A structured checklist for manager, HR, access, payroll, benefits, equipment, knowledge transfer and communications."],
+              ["Exit Interview Template", "Questions to understand employee experience, leadership, culture, development, rewards and reasons for leaving."]
+            ]},
+            { title: "Compliance & Records", items: [
+              ["HR Audit Checklist", "A practical checklist for reviewing HR policies, records, processes, compliance controls and documentation readiness."],
+              ["HR SOP Template", "A practical structure for documenting repeatable HR processes, ownership, SLAs and controls."],
+              ["Travel & Expense Policy Template", "A practical policy structure covering eligible expenses, approvals, documentation and reimbursement."]
+            ]},
+            { title: "HR Data & Reporting", items: [
+              ["Workforce Insights Report Template", "A leadership-ready structure for headcount, hiring, turnover, workforce trends, talent and people metrics."],
+              ["HR Department Budget Template", "A planning structure for HR operating costs, people programs, systems, vendors and workforce-related spend."],
+              ["Employee Satisfaction Survey", "A practical survey structure covering engagement, leadership, culture, communication, development and employee experience."]
+            ]}
+          ].map((category) => <div className="template-category" key={category.title}>
+            <div className="template-category-head"><h3>{category.title}</h3><span>{category.items.length} templates</span></div>
+            <div className="template-grid">
+              {category.items.map(([title, desc]) => <article className="template-card" key={title}>
+                <span className="tag">Template</span><h4>{title}</h4><p>{desc}</p>
+                <a href={`mailto:helen.sun@peoplecompound.com?subject=${encodeURIComponent(`People Compound template request — ${title}`)}`}>Request this template →</a>
+              </article>)}
+            </div>
+          </div>)}
         </div>
         <div className="template-note"><strong>Request by email:</strong> helen.sun@peoplecompound.com — include the template name and a little context about your organization so we can point you to the most useful version.</div>
       </div>
